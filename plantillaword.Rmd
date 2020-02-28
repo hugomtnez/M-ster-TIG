@@ -1,0 +1,24 @@
+---
+title: "bibliografia"
+author: "Hugo Martinez"
+date: "February 28, 2020"
+output: 
+  word_document:
+    reference_docx: docx_template.docx
+bibliography: refs.bib
+link-citation: yes
+csl: apa-no-issue-numbers.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##A python chunk
+
+tras revisar la referencia @IPCC2018
+
+Incluir una seccion de referencias que no este al final del documento 
+
+<div id="reds"></div>
+
