@@ -1,0 +1,208 @@
+---
+title: "Practica 2. GitHub y ciencia reproducible"
+author: "Hugo Martinez, Francisco Perez"
+date: "3/2/2020"
+output: word_document
+bibliography: refs.bib
+link-citation: yes
+csl: apa-no-issue-numbers.csl
+---
+
+# 2.1. La ciencia reproducible
+
+## 1)¿Qué es la Ciencia Reproducible? ¿En qué casos se consigue un 100% de la reproducibilidad?
+
+La ciencia reproducible puede definirse como aquel texto del artículo que viene acompañado de
+código, cuya lectura es interpretada por un ordenador y por tanto permite recrear exactamente
+todos los datos resultativos y figuras del articulo a partir de los datos originales (@rodriguez2016ciencia) Dicha reproducibilidad no es de tipo binario sino es de escala o gradiente, pues
+puede darse en trabajos irreproducibles como en estudios totalmente reproducibles donde su
+código permite al investigador regenerar o modificar el resultado final de los datos originales (@rodriguez2016ciencia). Por tanto, en aquellos casos donde se dispone del
+código completo de dicho artículo científico se puede conseguir una ciencia 100% reproducible
+donde podrán rebatirse argumentos, detectar fallos y corregir o mejorar dicho trabajo científico.
+
+## 2)¿Cuáles de los beneficios que se sugieren son para ti los más importantes? Justifica tu respuesta
+
+Los beneficios de la ciencia reproducible son cuantiosos, pero personalmente los más importante
+son la reducción drástica del riesgo de errores, su consecuente detección, revisión y comprensión
+para evitar malinterpretaciones del artículo, y de esta manera con poco esfuerzo poder generar
+tablas, figuras y resultados de un trabajo. Además de un sello de calidad y transparencia, así
+como el ahorro de tiempo y esfuerzo al utilizar códigos para los proyectos, todos estos beneficios
+hacen de la ciencia reproducible una manera muy atractiva de trabajar, además de su contribución
+a la comunidad investigadora de manera gratuita y colaborativa, y por ende la mejora de la
+sociedad.
+
+## 3)¿Por qué no hace todo el mundo Ciencia Reproducible
+
+La idea de ciencia reproducible es relativamente reciente, por lo que es lógico que no todo el mundo lo integre en sus estudios. Además, no ayuda el hecho de que al principio sea necesario formarse en las herramientas a utilizar, tales como el manejo de base de datos, lenguajes de programación, etc. Esto último requiere un esfuerzo, que para las personas que están en su etapa inicial de formación puede resultar más fácil adoptar el hábito, pero para científicos que no disponían de estas herramientas en su etapa de formación, puede resultarles más complicado adoptar esta manera de realizar sus estudios e investigaciones (@rodriguez2016ciencia).
+
+# 2.2. Uso de GitHub
+
+## Crear una cuenta en GitHub
+
+Nos dirigimos a la web GitHub.com y pinchamos en Sign up:  
+
+Introducimos nuestro usuario, email y contraseña para después pinchar Sign up for GitHub. Posteriormente seleccionamos la opción Choose Free e individua. En la siguiente ventana elegimos la razón de uso de la cuenta, en nuestro caso Student, el nivel de progrmación y el porqué usas GitHub, eligiendo en nuestro caso Host a Project(repository).
+
+
+Finalmente verificamos nuestra cuenta y crearemos un repositorio:
+ 
+Importante darle un nombre al repositorio y seleccionar si lo queremos público o privado. Es aconsejable marcar la casilla que te crea un archivo README en dicho repositorio para establecer una descripción del proyecto. 
+
+## Instalar Git
+
+Vamos a la página web [link](https://happygitwithr.com/install-git.html) que nos dirige al capitulo 6 sobre instalar Git. En el epicrafe 6.2 pinchamos en Git for Window y nos redirige a la web [link](https://gitforwindows.org/) y pinchamos en Download. Se descargara un ejecutable y lo ejecutaremos para darle a Next en todo su proceso de instalación y quedará correctamente instalado en nuestro ordenador.
+
+## Preséntate en Git
+
+Para introducirmos en Git debemos seguir los siguientes pasos en R: 
+
+install.packages("usethis") #en caso de necesitarlo
+
+library(usethis) #abrimos la librería reciente y escribimos nuestro usuario y correo vinculado a este
+use_git_config(user.name = "Fran Perez Chavero")
+              user.email = "fperezch@alumnos.unex.es"
+              
+Una manera alternativa de introducirnos o presentarnos es mediante el siguiente código, donde quedará configurado correctamente nuestra cuenta Git con RStudio.    
+#get into a shell from Rstudio is
+#Tools > Terminal or Tools > Shell
+git config --global –list
+
+## Crear un repositorio en Github y hacer una clonación
+
+Para crear un nuevo repositorio nos dirigimos a nuestra cuenta de GitHub y en New seleccionamos las características del nuevo repositorio:
+ 
+Importante seleccionar el modo público o privado según tu preferencia, siendo público para contribuir  a la ciencia reproducible y de esta manera compartir tus documentos y trabajos. Además a la hora de crear un primer repositorio se aconseja seleccionar la opción de Initialize this repository with a README, para tener algo en la carpeta creada y nos familiaricemos con esta herramienta a través de este primer documento. 
+
+Para confirmar que podemos hacer pull&push adjuntamos dos capturas de pantalla:
+
+ 
+
+ 
+Everything up to date, quiere decir que el push se ha hecho correctamente.
+
+## Conectar Rstudio a Git y Github
+
+Para clonar el repositorio nos dirigimos a nuestro repositorio creado anteriormente en GitHub y pinchamos en el rectángulo verde llamado Clone or download:
+
+Después clickamos sobre la carpeta con una flecha (redondeada en rojo en la captura anterior).
+
+ 
+ 
+Simplemente seleccionaremos Create Project y se clonará, creando asi un subdirectorio en nuestro ordenador donde se guardará cada archivo que creemos en Rstudio si estamos trabajando dentro de este proyecto.
+
+## Introducir cambios en el archivo README.md
+
+Desde la consola de Rstudio añadimos una línea de texto en el archivo README de nuestro Github. Seguidamente grabamos los cambios con un mensaje de lo que hemos hecho (commit) y subimos los cambios a nuestra cuenta de Github mediante Push. 
+
+Posteriormente comprobamos en la nube que efectivamente se han actualizado los cambios realizados en el archivo:
+ 
+## Crear un nuevo archivo y salvarlo en GitHub
+
+Creamos un nuevo archivo Rscript de nombre Bloque 3, lo salvamos mediante commit y subimos a nuestra cuenta Github:
+
+Como en el punto anterior, comprobamos que el archivo se haya subido correctamente en la nube:
+Ahora podemos trabajar conjuntamente con el archivo, cualquier persona conectada al repositorio puede bajarse el archivo a su Rstudio mediante Pull, realizar modificaciones actualizarlas en GitHub mediante commit y push.
+
+
+# 2.3. Conceptos básicos
+
+**Repositorio**
+
+El repositorio en la cuenta de GitHub es el directorio donde se van a guardar los archivos y que van a ser controlados por Git. Este repositorio puede ser tanto público como privado.
+
+**Rama**
+
+Por defecto, la rama en la que trabajamos se denomina “master”, pero si queremos hacer alguna prueba en un archivo, resulta conveniente crear una nueva rama y realizar las modificaciones pertinentes en el archivo sobre esta nueva rama y no la principal. Una vez realizada la prueba, si resulta satisfactoria podemos incorporar los cambios realizados a la rama principal mediante “compare and pull request”, dando la opción de eliminar la rama que se había creado para hacer la prueba.
+
+**Pull and Push**
+
+El comando Push sirve para subir los cambios que se hayan realizado en el archivo desde nuestro ordenador, a la cuenta de GitHub (es decir, en la nube). Por su parte, el comando Pull realiza el sentido contrario, se utiliza para bajar de GitHub los cambios en los archivos que hayan realizado otras personas.
+
+**Fork**
+
+El comando Fork  se utiliza para copiar los repositorios de otras personas y que sean de nuestro interés. Una vez hecho esto se pueden realizar los cambios que se deseen y posteriormente solicitar permiso para guardarlo en el repositorio original mediante el comando pull request.
+
+Para la definición de los conceptos nos hemos basado en el artículo (@prieto2018que).
+
+
+# 2.4. Generación de documento RMarkdown
+
+## 1. Opciones de sintaxis básica
+
+Texto plano 
+
+*texto en cursiva*
+
+**texto en negrita**
+
+superíndice^2^
+
+subíndice~2~
+
+~~texto tachado~~
+
+[link](https://github.com/hugomtnez/masterTIG)
+
+Ecuación: 
+$A = \pi*r^{2}$ 
+
+Ecuación en bloque:
+$$E = mc^{2}$$ 
+
+## 2. Fragmentos de código
+
+### Pega las palabras "Hola" y "mundo" en una línea nueva y  de nuevo en la misma línea
+
+```{r}
+print("Hola mundo")
+paste("Hola", "mundo")
+```
+
+### Pega "Hola" y "mundo" en una línea nueva pero no muestra el resultado
+
+```{r, eval=FALSE}
+paste("Hola", "mundo")
+```
+
+### Pega "Hola" y "mundo" en una línea nueva pero no muestra el resultado en R, ni se muestra en el documento Word
+
+```{r, echo=FALSE, eval=FALSE}
+paste("Hola", "mundo")
+```
+
+## 3. Muestra una tabla y un gráfico
+
+Se pide la creación de tablas y gráficas a partir de datos disponibles en R.
+
+### Gráfica
+
+Con el dataset disponible de muertes accidentales en EEUU en el periodo de 1973 a 1979, se ha creado la siguiente gráfica:
+
+
+```{r}
+plot(USAccDeaths, col = "red", 
+     xlab = "Año", ylab = "Muertes accidentales", lwd = 2,
+     main = "Muertes accidentales en USA entre 1973 y 1979")
+```
+
+### Tabla
+
+A partir de los datos estadisticos sobre criminalidad disponibles en R, se ha realizado la tabla siguiente: 
+
+```{r}
+library(flextable)
+library(officer)
+doc <- read_docx()
+ftable <- flextable(USArrests)
+ftable <- align(ftable, align = "center", part = "header")
+ftable <- align(ftable, align = "center", part = "body")
+ftable <- autofit(ftable, add_w = 1)
+ftable <- theme_vanilla(ftable)
+print(ftable)
+doc2 <- body_add_flextable(doc, value = ftable)
+print(doc2, target = "tabla_criminalidad.docx" )
+```
+
+# Bibliografía
+
+
